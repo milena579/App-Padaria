@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "nome": "Salgados",
+        "imagem": "coxinhaCategoria.png"
+    },
+    {
+        "id": "2",
+        "nome": "Bolos",
+        "imagem": "boloCategoria.png"
+    },
+    {
+        "id": "3",
+        "nome": "Donnut",
+        "imagem": "donnutCategoria.png"
+    },
+    {
+        "id": "4",
+        "nome": "Pães",
+        "imagem": "paoCategoria.png"
+    },
+    {
+        "id": "5",
+        "nome": "Cafés",
+        "imagem": "cafeCategoria.png"
+    }
+]
