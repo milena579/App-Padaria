@@ -10,19 +10,16 @@ export default function Login(){
     return (
         <>
             <View style={styles.tela}>
-                <ImageBackground source={require('../assets/images/fundo.png')} resizeMode="cover" style={styles.image}>
-                    <View style={styles.form}>
-                        <Text style={styles.titulo}>Cadastre-se</Text>
-                        <View style={styles.formCadastro}>
-                            <TextInput style={styles.input} placeholder="Nome"></TextInput>
-                            <TextInput style={styles.input} placeholder="Email"></TextInput>
-                            <TextInput style={styles.input} placeholder="Senha"></TextInput>
-                            <TextInput style={styles.input} placeholder="Confirmar senha"></TextInput>
-                        </View>
-                        <View style={styles.buttons}>
-                            <TouchableOpacity style={styles.cadastro}><Text style={styles.textCadastro}>Cadastrar</Text></TouchableOpacity>
-                        </View>
+                <ImageBackground source={require('../assets/images/fundo-recover.png')} resizeMode="cover" style={styles.image}>
+                <View style={styles.form}>
+                    <Text style={styles.titulo}>Esqueci a senha</Text>
+                    <View style={styles.login}>
+                        <TextInput style={styles.input} placeholder="Email"></TextInput>
                     </View>
+                    <View style={styles.buttons}>
+                        <TouchableOpacity style={styles.logar}><Text style={styles.textLogar}>Enviar Email</Text></TouchableOpacity>
+                    </View>
+                </View>
                 </ImageBackground>
             </View>
         </>
@@ -47,13 +44,13 @@ const styles =  StyleSheet.create({
         display: "flex",
         width: "100%",
         height: "60%",
-        justifyContent: "space-around",
+        justifyContent: "center",
         alignItems: "center"
     },
-    formCadastro : {
+    login : {
         display: "flex",
         width: "100%",
-        height: "60%",
+        height: "30%",
         alignItems: "center",
         justifyContent: "space-around",
         gap: 20,
@@ -101,18 +98,25 @@ const styles =  StyleSheet.create({
         alignItems: "center",
         gap: 20
     },
-    cadastro: {
+    logar: {
         backgroundColor: "#ffffff",
         padding: 12,
         alignItems: "center",
         borderRadius: 50,
         width: "70%"
     },
-    textCadastro: {
+    textLogar: {
         color: "#000000",
         fontSize: 15,
         fontWeight: 500,
         fontFamily: "Quicksand"
 
+    },
+    esqueciSenha: {
+        display: "flex",
+        flexDirection: "row",
+        width: "80%",
+        alignItems: "center",
+        justifyContent: "flex-end"
     }
 })

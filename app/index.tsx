@@ -17,7 +17,9 @@ export default function Login(){
                         <TextInput style={styles.input} placeholder="Email"></TextInput>
                         <View style={styles.senha}>
                             <TextInput style={styles.input} placeholder="Senha"></TextInput>
-                            <TouchableOpacity><Text style={styles.texto}>Esqueci a senha</Text></TouchableOpacity>
+                            <View style={styles.esqueciSenha}>
+                                <TouchableOpacity><Text style={styles.texto}>Esqueci a senha</Text></TouchableOpacity>
+                            </View>
                             </View>
                     </View>
                     <View style={styles.buttons}>
@@ -116,5 +118,12 @@ const styles =  StyleSheet.create({
         fontWeight: 500,
         fontFamily: "Quicksand"
 
+    },
+    esqueciSenha: {
+        display: "flex",
+        flexDirection: "row",
+        width: "80%",
+        alignItems: "center",
+        justifyContent: "flex-end"
     }
 })
