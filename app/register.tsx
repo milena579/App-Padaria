@@ -12,13 +12,15 @@ export default function Login(){
             <View style={styles.tela}>
                 <ImageBackground source={require('../assets/images/fundo.png')} resizeMode="cover" style={styles.image}>
                 <View style={styles.form}>
-                    <Text style={styles.titulo}>Login</Text>
+                    <Text style={styles.titulo}>Cadastre-se</Text>
                     <View style={styles.login}>
+                        <TextInput style={styles.input} placeholder="Email"></TextInput>
+                        <TextInput style={styles.input} placeholder="Email"></TextInput>
+                        <TextInput style={styles.input} placeholder="Email"></TextInput>
                         <TextInput style={styles.input} placeholder="Email"></TextInput>
                         <View style={styles.senha}>
                             <TextInput style={styles.input} placeholder="Senha"></TextInput>
-                            <TouchableOpacity><Text style={styles.texto}>Esqueci a senha</Text></TouchableOpacity>
-                            </View>
+                        </View>
                     </View>
                     <View style={styles.buttons}>
                         <TouchableOpacity style={styles.logar}><Text style={styles.textLogar}>Logar</Text></TouchableOpacity>
