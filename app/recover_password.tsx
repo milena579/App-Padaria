@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from "react-native";
 
 
-export default function Login(){
+export default function Recover_password(){
     const [email, setEmail] = useState<string>("");
     const [senha, setSenha] = useState<string>("");
 
