@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "nome": "Pão francês",
+        "imagem": "paofrances.png",
+        "preco": "0,99"
+        
+    },
+    {
+        "id": "2",
+        "nome": "Pão integral",
+        "imagem": "integral.png",
+        "preco": "7,99"
+    },
+    {
+        "id": "3",
+        "nome": "Pão d’agua",
+        "imagem": "dagua.png",
+        "preco": "1,48"
+    },
+    {
+        "id": "4",
+        "nome": "Pão preto",
+        "imagem": "preto.png",
+        "preco": "1,48"
+    }
+]

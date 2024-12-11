@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "nome": "Coxinha",
+        "imagem": "coxinha.png",
+        "preco": "0,99"
+        
+    },
+    {
+        "id": "2",
+        "nome": "Croassant",
+        "imagem": "croassant.png",
+        "preco": "7,99"
+    },
+    {
+        "id": "3",
+        "nome": "Enrolado vina",
+        "imagem": "vina.png",
+        "preco": "1,48"
+    },
+    {
+        "id": "4",
+        "nome": "Pastel",
+        "imagem": "pastel.png",
+        "preco": "1,48"
+    }
+]
