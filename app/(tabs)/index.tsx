@@ -15,7 +15,7 @@ import { Produtos } from "@/components/produtos";
 import categorias from "@/constants/categotias.json";
 import destaque from "@/constants/destaque.json";
 import paes from "@/constants/paes.json";
-import salgado from "@/constants/paes.json";
+import salgado from "@/constants/salgados.json";
 
 const requireImg = (img: string) => {
   const imageMap: any = {
@@ -50,9 +50,9 @@ const requirePaes = (img: string) => {
 const requireSalgado = (img: string) => {
   const imageMap: any = {
     "coxinha.png": require("@/assets/images/coxinha.png"),
-    "paofrances.png": require("@/assets/images/paofrances.png"),
-    "integral.png": require("@/assets/images/integral.png"),
-    "dagua.png": require("@/assets/images/dagua.png"),
+    "croassant.png": require("@/assets/images/croassant.png"),
+    "vina.png": require("@/assets/images/vina.png"),
+    "pastel.png": require("@/assets/images/pastel.png"),
   };
   return imageMap[img] || require("@/assets/images/fundo.png");
 };
