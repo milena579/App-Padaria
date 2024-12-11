@@ -5,12 +5,15 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import {StyleSheet} from "react-native"
+
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    Quicksand: require('../assets/fonts/Quicksand-Regular.ttf'),
+
   });
 
   useEffect(() => {
@@ -30,7 +33,10 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)" options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen name="register" options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen name="recover_password" options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen name="reception" options={{headerShown: false}}></Stack.Screen>
       </Stack>
    </>
   );
+
 }
+

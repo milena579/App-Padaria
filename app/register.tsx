@@ -11,22 +11,18 @@ export default function Login(){
         <>
             <View style={styles.tela}>
                 <ImageBackground source={require('../assets/images/fundo.png')} resizeMode="cover" style={styles.image}>
-                <View style={styles.form}>
-                    <Text style={styles.titulo}>Login</Text>
-                    <View style={styles.login}>
-                        <TextInput style={styles.input} placeholder="Email"></TextInput>
-                        <View style={styles.senha}>
+                    <View style={styles.form}>
+                        <Text style={styles.titulo}>Cadastre-se</Text>
+                        <View style={styles.formCadastro}>
+                            <TextInput style={styles.input} placeholder="Nome"></TextInput>
+                            <TextInput style={styles.input} placeholder="Email"></TextInput>
                             <TextInput style={styles.input} placeholder="Senha"></TextInput>
-                            <View style={styles.esqueciSenha}>
-                                <TouchableOpacity><Text style={styles.texto}>Esqueci a senha</Text></TouchableOpacity>
-                            </View>
-                            </View>
+                            <TextInput style={styles.input} placeholder="Confirmar senha"></TextInput>
+                        </View>
+                        <View style={styles.buttons}>
+                            <TouchableOpacity style={styles.cadastro}><Text style={styles.textCadastro}>Cadastrar</Text></TouchableOpacity>
+                        </View>
                     </View>
-                    <View style={styles.buttons}>
-                        <TouchableOpacity style={styles.logar}><Text style={styles.textLogar}>Logar</Text></TouchableOpacity>
-                        <TouchableOpacity><Text style={styles.texto}>Cadastre-se</Text></TouchableOpacity>
-                    </View>
-                </View>
                 </ImageBackground>
             </View>
         </>
@@ -54,10 +50,10 @@ const styles =  StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center"
     },
-    login : {
+    formCadastro : {
         display: "flex",
         width: "100%",
-        height: "40%",
+        height: "60%",
         alignItems: "center",
         justifyContent: "space-around",
         gap: 20,
@@ -105,25 +101,18 @@ const styles =  StyleSheet.create({
         alignItems: "center",
         gap: 20
     },
-    logar: {
+    cadastro: {
         backgroundColor: "#ffffff",
         padding: 12,
         alignItems: "center",
         borderRadius: 50,
         width: "70%"
     },
-    textLogar: {
+    textCadastro: {
         color: "#000000",
         fontSize: 15,
         fontWeight: 500,
         fontFamily: "Quicksand"
 
-    },
-    esqueciSenha: {
-        display: "flex",
-        flexDirection: "row",
-        width: "80%",
-        alignItems: "center",
-        justifyContent: "flex-end"
     }
 })

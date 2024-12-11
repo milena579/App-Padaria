@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from "react-native";
 
 
-export default function Login(){
+export default function Recover_password(){
     const [email, setEmail] = useState<string>("");
     const [senha, setSenha] = useState<string>("");
 
@@ -10,21 +10,14 @@ export default function Login(){
     return (
         <>
             <View style={styles.tela}>
-                <ImageBackground source={require('../assets/images/fundo.png')} resizeMode="cover" style={styles.image}>
+                <ImageBackground source={require('../assets/images/fundo-recover.png')} resizeMode="cover" style={styles.image}>
                 <View style={styles.form}>
-                    <Text style={styles.titulo}>Login</Text>
+                    <Text style={styles.titulo}>Esqueci a senha</Text>
                     <View style={styles.login}>
                         <TextInput style={styles.input} placeholder="Email"></TextInput>
-                        <View style={styles.senha}>
-                            <TextInput style={styles.input} placeholder="Senha"></TextInput>
-                            <View style={styles.esqueciSenha}>
-                                <TouchableOpacity><Text style={styles.texto}>Esqueci a senha</Text></TouchableOpacity>
-                            </View>
-                            </View>
                     </View>
                     <View style={styles.buttons}>
-                        <TouchableOpacity style={styles.logar}><Text style={styles.textLogar}>Logar</Text></TouchableOpacity>
-                        <TouchableOpacity><Text style={styles.texto}>Cadastre-se</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.logar}><Text style={styles.textLogar}>Enviar Email</Text></TouchableOpacity>
                     </View>
                 </View>
                 </ImageBackground>
@@ -51,13 +44,13 @@ const styles =  StyleSheet.create({
         display: "flex",
         width: "100%",
         height: "60%",
-        justifyContent: "space-around",
+        justifyContent: "center",
         alignItems: "center"
     },
     login : {
         display: "flex",
         width: "100%",
-        height: "40%",
+        height: "30%",
         alignItems: "center",
         justifyContent: "space-around",
         gap: 20,
