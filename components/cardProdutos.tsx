@@ -1,37 +1,26 @@
+import { FontDisplay } from "expo-font";
 import React from "react";
 import {
   View,
   StyleSheet,
   Text,
-  TouchableOpacity,
   Image,
   ImageSourcePropType,
 } from "react-native";
 
-export const CardProdutos = ({
-  image,
-  title,
-  preco,
-}: {
-  image: ImageSourcePropType;
-  title: string;
-  preco: string;
-}) => {
+export const CardProdutos = ({image, title, description, preco}: {image: ImageSourcePropType; title: string; preco: string; description: string}) => {
   return (
     <>
-      <View style={styles.container}>
-        <Image source={image} style={styles.image} />
-      </View>
-      <Text style={styles.text}>{title}</Text>
-      <View style={styles.desc}>
-        <View style={styles.preco}>
-          <Text style={styles.preco}>R$</Text>
-          <Text style={styles.preco}>{preco}</Text>
+    
+      <View style={styles.produto}>
+        <View style={styles.escrita}>
+          <View><Text style={styles.titulo}>{title}</Text></View>
+          <View><Text  style={styles.texto}>{description}</Text></View>
+          <View><Text  style={styles.valor}>R${preco}</Text></View>
         </View>
-        <TouchableOpacity style={styles.car}>
-          <Image source={require("../assets/images/carrinho.png")} />
-          <Text style={styles.mais}>+</Text>
-        </TouchableOpacity>
+        <View style={styles.foto}>
+            <Image source={image}  style={styles.image}></Image>
+        </View>
       </View>
     </>
   );
@@ -41,52 +30,41 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
+    borderRadius: 15
   },
-
-  text: {
-    marginTop: 2,
-  },
-
-  container: {
-    width: 100,
-    height: 100,
-    borderRadius: 15,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  cate: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  mais: {
-    fontWeight: "700",
-    fontSize: 20,
-    color: "#6C2218"
-
-  },
-
-  preco: {
+  produto :{
     display: "flex",
     flexDirection: "row",
-    fontWeight: "500",
-    justifyContent: "center",
+    gap:10,
+    width: "100%",
+    height:"18%",
+    paddingHorizontal: 10,
     alignItems: "center"
   },
-
-  desc: {
+  escrita:{
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    width:"55%",
+    gap: 15,
+    height:"100%",
+    justifyContent: "center"
   },
-
-  car: {
+  foto: {
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center"
+    height: "80%",
+    width: "45%",
+    padding: 5
   },
+  titulo: {
+    fontSize: 18,
+    fontWeight: 600,
+    fontFamily: "Quicksand",
+  },
+  texto: {
+    fontSize: 15,
+    fontFamily: "Quicksand",
+  },
+  valor:{
+    fontSize: 15,
+    fontFamily: "Quicksand",
+  }
 });
