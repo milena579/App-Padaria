@@ -1,0 +1,24 @@
+[
+    {
+        "id": "1",
+        "nome": "Pão francês",
+        "imagem": "paofrances.png",
+        "preco": "0,99",
+        "qtd" : 4
+        
+    },
+    {
+        "id": "2",
+        "nome": "Fatia bolo",
+        "imagem": "bolo.png",
+        "preco": "7,99",
+        "qtd" : 2
+    },
+    {
+        "id": "3",
+        "nome": "Pão de queijo",
+        "imagem": "paoqueijo.png",
+        "preco": "1,48",
+        "qtd" : 8
+    }
+]
