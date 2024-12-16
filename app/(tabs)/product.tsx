@@ -1,6 +1,6 @@
 import { CardProdutos } from "@/components/cardProdutos";
 import React, { useState } from "react";
-import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity, Image } from "react-native";
 
 
 export default function Product(){
@@ -10,10 +10,14 @@ export default function Product(){
     return (
         <>
             <View style={styles.tela}> 
-            <View style={styles.sessao}>
-                
-                <Text>Bolos</Text>
-            </View>
+                <View style={styles.sessao}>
+                    
+                    <Text>Bolos</Text>
+                </View>
+                <View style={styles.index}>
+                    <Image source={require("../../assets/images/←.png")}></Image>
+                    <Text style={styles.carrinho}>SEU CARRINHO</Text>
+                </View>
                 <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
                 <hr style={{width:"100%"}} />
                 <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
@@ -50,4 +54,12 @@ const styles =  StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center"
     },
+    carrinho: {
+        color: "#6C2218",
+        fontWeight: 600,
+        fontSize: 25,
+        margin: 20,
+        marginLeft: "22%"
+    },
+
 })
