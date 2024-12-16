@@ -90,9 +90,9 @@ const styles = StyleSheet.create({
     carrinho: {
         color: "#6C2218",
         fontWeight: 600,
-        fontSize: 25,
+        fontSize: 20,
         margin: 20,
-        marginLeft: "22%"
+        marginLeft: "28%"
     },
 
     title: {
