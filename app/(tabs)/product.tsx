@@ -61,5 +61,10 @@ const styles =  StyleSheet.create({
         margin: 20,
         marginLeft: "22%"
     },
+    index: {
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "row",
+    }
 
 })
