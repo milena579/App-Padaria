@@ -1,6 +1,7 @@
 import { CardProdutos } from "@/components/cardProdutos";
 import React, { useState } from "react";
-import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity, Image } from "react-native";
+import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity, Image, ScrollView } from "react-native";
+import { FlatList } from "react-native-reanimated/lib/typescript/Animated";
 
 
 export default function Product(){
@@ -10,23 +11,22 @@ export default function Product(){
     return (
         <>
             <View style={styles.tela}> 
-                <View style={styles.sessao}>
-                    
-                    <Text>Bolos</Text>
-                </View>
                 <View style={styles.index}>
-                    <Image source={require("../../assets/images/←.png")}></Image>
-                    <Text style={styles.carrinho}>SEU CARRINHO</Text>
+                    {/* <Image source={require("../../assets/images/←.png")}></Image> */}
+                    <Text style={styles.carrinho}>BOLOS</Text>
                 </View>
-                <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
-                <hr style={{width:"100%"}} />
-                <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
-                <hr style={{width:"100%"}} />
-                <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
-                <hr style={{width:"100%"}} />
-                <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
-                <hr style={{width:"100%"}} />
-                <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
+                <ScrollView style={styles.produtos}>
+                    <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
+                    <hr style={{width:"100%"}} />
+                    <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
+                    <hr style={{width:"100%"}} />
+                    <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
+                    <hr style={{width:"100%"}} />
+                    <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
+                    <hr style={{width:"100%"}} />
+                    <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
+                    <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
+                </ScrollView>
             </View>
         </>
     );
@@ -45,7 +45,7 @@ const styles =  StyleSheet.create({
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
-        padding: 15
+        padding: 15,
     },
     form: {
         display: "flex",
@@ -65,6 +65,10 @@ const styles =  StyleSheet.create({
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
+    },
+    produtos: {
+        display: "flex",
+        width: "100%"
     }
 
 })
