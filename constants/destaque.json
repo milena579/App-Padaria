@@ -2,17 +2,20 @@
     {
         "id": "1",
         "nome": "Pão francês",
-        "imagem": "paofrances.png"
+        "imagem": "paofrances.png",
+        "preco" : "12.8"
         
     },
     {
         "id": "2",
         "nome": "Fatia bolo",
-        "imagem": "bolo.png"
+        "imagem": "bolo.png",
+        "preco" : "12.8"
     },
     {
         "id": "3",
         "nome": "Pão de queijo",
-        "imagem": "paoqueijo.png"
+        "imagem": "paoqueijo.png",
+        "preco" : "12.8"
     }
 ]

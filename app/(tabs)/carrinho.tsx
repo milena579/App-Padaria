@@ -57,6 +57,29 @@ export default function HomeScreen() {
                         )}
                     />
                 </View>
+
+                <View style={styles.preco}>
+                    <Text style={styles.pag}>
+                        Forma de pagamento
+                        <Text style={styles.cartao}>
+                            Cartão/Débito
+                        </Text>
+                    </Text>
+                </View>
+
+                <View style={styles.total}>
+                    <Text style={styles.title}>
+                        Total
+                    </Text>
+                    <Text style={styles.texto}>
+                        R$ 45,13
+                    </Text>
+                </View>
+
+
+            </View>
+            <View style={styles.fina}>
+                <Text style={styles.finatext}>Finalizar pedido ✓</Text>
             </View>
         </>
     );
@@ -84,6 +107,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 30,
+        justifyContent: "flex-end"
 
     },
 
@@ -103,6 +127,71 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "center",
         flexDirection: "row",
+    },
+
+    preco: {
+
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "center",
+        marginTop: 30
+
+    },
+
+    pag: {
+
+        borderWidth: 2,
+        borderColor: "#6C2218",
+        paddingRight: 0,
+        padding: 10,
+        borderRightWidth: 0,
+        borderRadius: 50
+    },
+
+    cartao: {
+
+        borderWidth: 2,
+        borderColor: "#6C2218",
+        padding: 10,
+        borderRadius: 50,
+        marginLeft: 110
+
+    },
+
+    total: {
+
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 30
+
+    },
+
+    texto: {
+
+        fontSize: 16,
+        fontWeight: 500
+    },
+
+    fina: {
+
+        backgroundColor: "#6C2218",
+        paddingVertical: 20,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+
+
+    },
+
+    finatext: {
+
+        color: "white",
+        fontSize: 16,
+        fontWeight: 500
+
     }
 
 });

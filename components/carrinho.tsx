@@ -35,6 +35,9 @@ export const CardCarrinho = ({
                         <Text style={styles.mais}>+</Text>
                     </TouchableOpacity>
                 </View>
+                <View>
+                    
+                </View>
             </View>
         </>
     );
