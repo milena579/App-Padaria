@@ -12,18 +12,14 @@ export default function Product(){
         <>
             <View style={styles.tela}> 
                 <View style={styles.index}>
-                    {/* <Image source={require("../../assets/images/←.png")}></Image> */}
-                    <Text style={styles.carrinho}>BOLOS</Text>
+                    <Image source={require("../../assets/images/←.png")}></Image>
+                    <Text style={styles.produto}>BOLOS</Text>
                 </View>
                 <ScrollView style={styles.produtos}>
                     <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
-                    <hr style={{width:"100%"}} />
                     <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
-                    <hr style={{width:"100%"}} />
                     <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
-                    <hr style={{width:"100%"}} />
                     <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
-                    <hr style={{width:"100%"}} />
                     <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
                     <CardProdutos image={require("../../assets/images/bolo.png")} title="Bolo de chocolate" description="Bolo de chocolate com ganache" preco="30,90"></CardProdutos>
                 </ScrollView>
@@ -54,10 +50,10 @@ const styles =  StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center"
     },
-    carrinho: {
+    produto: {
         color: "#6C2218",
         fontWeight: 600,
-        fontSize: 25,
+        fontSize: 20,
         margin: 20,
         marginLeft: "22%"
     },
