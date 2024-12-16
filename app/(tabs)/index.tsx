@@ -9,7 +9,7 @@ import {
   View, ScrollView
 } from "react-native";
 import { Categorias } from "@/components/categorias";
-import { CardProdutos } from "@/components/cardProdutos";
+import { CardProduto } from "@/components/cardProduto";
 import { Produtos } from "@/components/produtos";
 
 import categorias from "@/constants/categotias.json";
@@ -91,7 +91,7 @@ export default function HomeScreen() {
             data={destaque}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
-              <CardProdutos
+              <CardProduto
                 title={item.nome}
                 image={requireDestaque(item.imagem)}
                 preco={item.preco}
