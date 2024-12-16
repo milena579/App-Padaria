@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   preco: {
     display: "flex",
     flexDirection: "row",
-    fontWeight: "500",
+    fontWeight: "400",
     justifyContent: "center",
     alignItems: "center"
   },
