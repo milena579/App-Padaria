@@ -2,26 +2,26 @@
     {
         "id": "1",
         "nome": "Coxinha",
-        "imagem": "coxinha.png",
+        "imagem": "https://static.itdg.com.br/images/640-440/2fea73df522a2e5c2a1e2e3c55173a9e/354277-original.jpg",
         "preco": "0,99"
         
     },
     {
         "id": "2",
         "nome": "Croassant",
-        "imagem": "croassant.png",
+        "imagem": "https://storage.googleapis.com/imagens_videos_gou_cooking_prod/production/mesas/2019/11/1acdc8cb-croissant-_-tm-croissant-folhados-brioches-_-claudia-rezende-_-6605-baixa-3.jpg",
         "preco": "7,99"
     },
     {
         "id": "3",
         "nome": "Enrolado vina",
-        "imagem": "vina.png",
+        "imagem": "https://i.ytimg.com/vi/xKGaNJHN1cA/maxresdefault.jpg",
         "preco": "1,48"
     },
     {
         "id": "4",
         "nome": "Pastel",
-        "imagem": "pastel.png",
+        "imagem": "https://redefoodservice.com.br/wp-content/uploads/2023/05/Massa-de-Pastel-de-Feira.jpg",
         "preco": "1,48"
     }
 ]

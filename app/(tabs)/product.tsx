@@ -4,10 +4,17 @@ import React, { useState } from "react";
 import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity, Image, ScrollView } from "react-native";
 import { FlatList } from "react-native-reanimated/lib/typescript/Animated";
 
+interface Bolos{
+    
+    name:String,
+    price:number,
+    link:String
+}
 
 export default function Product(){
     const [email, setEmail] = useState<string>("");
     const [senha, setSenha] = useState<string>("");
+    const [data, setData] = React.useState<Bolos[]>([]);
 
     return (
         <>

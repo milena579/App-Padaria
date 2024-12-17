@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "nome": "Suspiro com morango",
+        "imagem": "https://claudia.abril.com.br/wp-content/uploads/2020/02/receita-bolo-morango-chantilly.jpg",
+        "preco": "0,99"
+        
+    },
+    {
+        "id": "2",
+        "nome": "Cenoura com chocolate",
+        "imagem": "https://www.sumerbol.com.br/uploads/images/2017/11/bolo-de-cenoura-1510601104.jpg",
+        "preco": "7,99"
+    },
+    {
+        "id": "3",
+        "nome": "Chocolate",
+        "imagem": "https://recipesblob.oetker.com.br/assets/a81bc035eb7f407faaa2c93e04edaf78/750x910/bolo-de-aniversrio-de-chocolate.jpg",
+        "preco": "1,48"
+    },
+    {
+        "id": "4",
+        "nome": "Floresta negra",
+        "imagem": "https://bolosparavender.com/wp-content/uploads/2019/11/bolo-floresta-negra-1200x900.jpg",
+        "preco": "1,48"
+    }
+]
