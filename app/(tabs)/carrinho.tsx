@@ -34,52 +34,50 @@ export default function HomeScreen() {
                     <Text style={styles.carrinho}>SEU CARRINHO</Text>
                 </View>
 
-                <View>
+                <ScrollView>
                     <Text style={styles.title}>Detalhes</Text>
 
                     <Text>Juliana Dias Purcino</Text>
                     <Text>R. Luísa Dariva, 40 - Campina do Siqueira, Curitiba - PR, 80730-480</Text>
-                </View>
 
-                <View>
+                    <View>
 
-                    <Text style={styles.title}>Lista de produtos</Text>
+                        <Text style={styles.title}>Lista de produtos</Text>
 
-                    <FlatList
-                        contentContainerStyle={styles.contentContainer}
-                        data={carrinho}
-                        keyExtractor={(item) => item.id.toString()}
-                        renderItem={({ item }) => (
-                            <CardCarrinho
-                                title={item.nome}
-                                image={requireImg(item.imagem)}
-                                preco={item.preco}
-                                qtd={item.qtd}
+                        <FlatList
+                            contentContainerStyle={styles.contentContainer}
+                            data={carrinho}
+                            keyExtractor={(item) => item.id.toString()}
+                            renderItem={({ item }) => (
+                                <CardCarrinho
+                                    title={item.nome}
+                                    image={requireImg(item.imagem)}
+                                    preco={item.preco}
+                                    qtd={item.qtd}
 
-                            />
-                        )}
-                    />
-                </View>
+                                />
+                            )}
+                        />
+                    </View>
 
-                <View style={styles.preco}>
-                    <Text style={styles.pag}>
-                        Forma de pagamento
-                        <Text style={styles.cartao}>
-                            Cartão/Débito
+                    <View style={styles.preco}>
+                        <Text style={styles.pag}>
+                            Forma de pagamento
+                            <Text style={styles.cartao}>
+                                Cartão/Débito
+                            </Text>
                         </Text>
-                    </Text>
-                </View>
+                    </View>
 
-                <View style={styles.total}>
-                    <Text style={styles.title}>
-                        Total
-                    </Text>
-                    <Text style={styles.texto}>
-                        R$ 45,13
-                    </Text>
-                </View>
-
-
+                    <View style={styles.total}>
+                        <Text style={styles.title}>
+                            Total
+                        </Text>
+                        <Text style={styles.texto}>
+                            R$ 45,13
+                        </Text>
+                    </View>
+                </ScrollView >
             </View>
             <View style={styles.fina}>
                 <Text style={styles.finatext}>Finalizar pedido ✓</Text>
@@ -93,9 +91,9 @@ const styles = StyleSheet.create({
     carrinho: {
         color: "#6C2218",
         fontWeight: 600,
-        fontSize: 20,
+        fontSize: 25,
         margin: 20,
-        marginLeft: "28%"
+        marginLeft: "22%"
     },
 
     title: {
@@ -147,9 +145,12 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: "#6C2218",
         paddingRight: 0,
-        padding: 10,
         borderRightWidth: 0,
-        borderRadius: 50
+        borderRadius: 50,
+        display: "flex",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        paddingLeft: 20
     },
 
     cartao: {
@@ -158,7 +159,9 @@ const styles = StyleSheet.create({
         borderColor: "#6C2218",
         padding: 10,
         borderRadius: 50,
-        marginLeft: 110
+        marginLeft: 40,
+        borderTopWidth: 0.3,
+        borderBottomWidth: 0.3
 
     },
 
