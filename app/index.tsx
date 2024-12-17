@@ -1,10 +1,14 @@
+import { Link, router } from "expo-router";
 import React, { useState } from "react";
 import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from "react-native";
-
 
 export default function Login(){
     const [email, setEmail] = useState<string>("");
     const [senha, setSenha] = useState<string>("");
+
+    const onPress = () => {
+        router.push("/(tabs)");
+    };
 
     const fundo = {uri:'../assets/images/fundo.png'};
     return (
@@ -18,13 +22,17 @@ export default function Login(){
                         <View style={styles.senha}>
                             <TextInput style={styles.input} placeholder="Senha"></TextInput>
                             <View style={styles.esqueciSenha}>
-                                <TouchableOpacity><Text style={styles.texto}>Esqueci a senha</Text></TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Link style={styles.texto} href={"/recover_password"}>Esqueci a senha</Link>
+                                </TouchableOpacity>
                             </View>
                             </View>
                     </View>
                     <View style={styles.buttons}>
-                        <TouchableOpacity style={styles.logar}><Text style={styles.textLogar}>Logar</Text></TouchableOpacity>
-                        <TouchableOpacity><Text style={styles.texto}>Cadastre-se</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.logar}><Text style={styles.textLogar} onPress={onPress}>Logar</Text></TouchableOpacity>
+                        <TouchableOpacity>
+                            <Link href={"/register"} style={styles.texto}>Cadastre-se</Link>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 </ImageBackground>

@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React from "react";
 import {
   View,
@@ -18,11 +19,13 @@ export const Categorias = ({
   return (
     <>
       <View style={styles.cate}>
-        <View style={styles.container}>
-          <TouchableOpacity>
-            <Image source={image} style={styles.image} />
-          </TouchableOpacity>
-        </View>
+        <Link href={"/product"}>
+          <View style={styles.container}>
+            <TouchableOpacity>
+              <Image source={image} style={styles.image} />
+            </TouchableOpacity>
+          </View>
+        </Link>
         <Text style={styles.text}>{title}</Text>
       </View>
     </>

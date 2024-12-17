@@ -11,6 +11,7 @@ import {
 
 import { CardCarrinho } from "@/components/carrinho";
 import carrinho from "@/constants/carrinho.json";
+import { Link } from "expo-router";
 
 const requireImg = (img: string) => {
     const imageMap: any = {
@@ -27,7 +28,9 @@ export default function HomeScreen() {
             <View style={styles.container}>
 
                 <View style={styles.index}>
-                    <Image source={require("../../assets/images/←.png")}></Image>
+                    <Link href={"/"}>
+                        <Image source={require("../../assets/images/←.png")}></Image>
+                    </Link>
                     <Text style={styles.carrinho}>SEU CARRINHO</Text>
                 </View>
 

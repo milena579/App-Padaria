@@ -1,4 +1,5 @@
 import { CardProdutos } from "@/components/cardProdutos";
+import { Link } from "expo-router";
 import React, { useState } from "react";
 import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity, Image, ScrollView } from "react-native";
 import { FlatList } from "react-native-reanimated/lib/typescript/Animated";
@@ -12,7 +13,9 @@ export default function Product(){
         <>
             <View style={styles.tela}> 
                 <View style={styles.index}>
-                    <Image source={require("../../assets/images/←.png")}></Image>
+                    <Link href={"/"}>
+                        <Image source={require("../../assets/images/←.png")}></Image>  
+                    </Link>
                     <Text style={styles.produto}>BOLOS</Text>
                 </View>
                 <ScrollView style={styles.produtos}>
