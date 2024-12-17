@@ -7,7 +7,7 @@ export default function Login(){
     const [senha, setSenha] = useState<string>("");
 
     const onPress = () => {
-        router.push("/(tabs)");
+        router.push("/reception");
     };
 
     const fundo = {uri:'../assets/images/fundo.png'};

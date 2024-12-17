@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React, { useState } from "react";
 import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from "react-native";
 
@@ -24,7 +25,9 @@ export default function Reception(){
                     <Text style={[styles.bemVindo,styles.textos]}>Bem-vindo(a), e aproveite o melhor da nossa padaria!</Text>
                 </View>
                 <View style={styles.button}>
-                    <TouchableOpacity style={styles.seguir}><Text style={styles.textSeguir}>Conhecer Loja</Text></TouchableOpacity>
+                    <TouchableOpacity style={styles.seguir}>
+                        <Link href={"/(tabs)"} style={styles.textSeguir}>Conhecer Loja</Link>
+                    </TouchableOpacity>
                 </View>
             </View>
     </>
