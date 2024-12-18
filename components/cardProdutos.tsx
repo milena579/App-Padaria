@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export const CardProdutos = ({ image, title, description, preco }: { image: ImageSourcePropType; title: string; preco: string; description: string }) => {
+export const CardProdutos = ({ image, title, description, preco, onPress }: { image: ImageSourcePropType; title: string; preco: number; description: string; onPress?: () => void; }) => {
   return (
     <>
       <View style={styles.tudo}>
@@ -19,7 +19,7 @@ export const CardProdutos = ({ image, title, description, preco }: { image: Imag
             <View><Text style={styles.texto}>{description}</Text></View>
             <View style={styles.preco} >
               <Text style={styles.valor}>R${preco}</Text>
-              <TouchableOpacity style={styles.car}>
+              <TouchableOpacity style={styles.car} onPress={onPress}>
                 <Image style={styles.carIcon} source={require("../assets/images/carrinho.png")} />
                 <Text style={styles.mais}>+</Text>
               </TouchableOpacity>
@@ -49,14 +49,16 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     paddingHorizontal: 10,
-    alignItems: "center"
+    alignItems: "center",
+  
   },
   tudo: {
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    height: "20%",
+    height: "100%",
     alignItems: "center",
+    marginVertical: 10
   },
   escrita: {
     display: "flex",
@@ -75,6 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 600,
     fontFamily: "Quicksand",
+
   },
   texto: {
     fontSize: 13,

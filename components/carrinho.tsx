@@ -7,61 +7,59 @@ import {
     Image,
     ImageSourcePropType,
 } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Float } from "react-native/Libraries/Types/CodegenTypes";
 
 export const CardCarrinho = ({
     image,
     title,
     preco,
-    qtd,
-    index,
-    onUpdatecar,
 }: {
     image: ImageSourcePropType;
     title: string;
-    preco: string;
-    qtd: number;
-    index: number;
-    onUpdatecar: (car: any[]) => void;
+    preco: Float;
 }) => {
 
-    const [cart, setCart] = useState<any[]>([]);
+    // const [cart, setCart] = useState<any[]>([]);
 
-    useEffect(() => {
-        const loadCart = async () => {
-            const storedCart = await AsyncStorage.getItem("cart");
-            if (storedCart) {
-                setCart(JSON.parse(storedCart));
-            }
-        };
-        loadCart();
-    }, []);
+    // useEffect(() => {
+    //     const loadCart = async () => {
+    //         const storedCart = await AsyncStorage.getItem("cart");
+    //         if (storedCart) {
+    //             setCart(JSON.parse(storedCart));
+    //         }
+    //     };
+    //     loadCart();
+    // }, []);
 
-    const updateCart = async (updatedCart: any[]) => {
-        await AsyncStorage.setItem("cart", JSON.stringify(updatedCart));
-        setCart(updatedCart);
-        onUpdatecar(updatedCart); 
-    };
+    // const updateCart = async (updatedCart: any[]) => {
+    //     await AsyncStorage.setItem("cart", JSON.stringify(updatedCart));
+    //     setCart(updatedCart);
+    //     onUpdatecar(updatedCart);
+    // };
 
-    const increaseQty = () => {
-        const updatedCart = [...cart];
-        updatedCart[index].qtd += 1;
-        updateCart(updatedCart);
-    };
+    // const increaseQty = () => {
+    //     const updatedCart = [...cart];
+    //     updatedCart[index].qtd += 1;
+    //     updateCart(updatedCart);
+    //     onUpdatecar(updatedCart);
+    // };
 
-    const decreaseQty = () => {
-        const updatedCart = [...cart];
-        if (updatedCart[index].qtd > 1) {
-            updatedCart[index].qtd -= 1;
-            updateCart(updatedCart);
-        }
-    };
+    // const decreaseQty = () => {
+    //     const updatedCart = [...cart];
+    //     if (updatedCart[index].qtd > 1) {
+    //         updatedCart[index].qtd -= 1;
+    //         updateCart(updatedCart);
+    //         onUpdatecar(updatedCart);
+    //     }
+    // };
 
-    const removeItem = () => {
-        const updatedCart = [...cart];
-        updatedCart.splice(index, 1);
-        updateCart(updatedCart);
-    };
+    // const removeItem = () => {
+    //     const updatedCart = [...cart];
+    //     updatedCart.splice(index, 1);
+    //     updateCart(updatedCart);
+    //     onUpdatecar(updatedCart);
+    // };
+
 
     return (
         <View style={styles.container}>
@@ -73,15 +71,15 @@ export const CardCarrinho = ({
                 </View>
             </View>
             <View style={styles.qtdAndTrashContainer}>
-                <TouchableOpacity style={styles.trashButton} onPress={removeItem}>
+                <TouchableOpacity style={styles.trashButton} >
                     <Image source={require("@/assets/images/trash.png")} style={styles.icon} />
                 </TouchableOpacity>
                 <View style={styles.qtdContainer}>
-                    <TouchableOpacity onPress={increaseQty}>
+                    <TouchableOpacity >
                         <Image source={require("@/assets/images/mais.png")} style={styles.icon} />
                     </TouchableOpacity>
-                    <Text style={styles.qtdText}>{qtd}</Text>
-                    <TouchableOpacity onPress={decreaseQty}>
+                    <Text style={styles.qtdText}>1</Text>
+                    <TouchableOpacity >
                         <Image source={require("@/assets/images/menos.png")} style={styles.icon} />
                     </TouchableOpacity>
                 </View>
