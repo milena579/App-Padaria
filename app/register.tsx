@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React, { useState } from "react";
 import { ImageBackground, View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from "react-native";
 
@@ -20,7 +21,7 @@ export default function Login(){
                             <TextInput style={styles.input} placeholder="Confirmar senha"></TextInput>
                         </View>
                         <View style={styles.buttons}>
-                            <TouchableOpacity style={styles.cadastro}><Text style={styles.textCadastro}>Cadastrar</Text></TouchableOpacity>
+                            <TouchableOpacity style={styles.cadastro}><Link href={"/"}><Text style={styles.textCadastro}>Cadastrar</Text></Link></TouchableOpacity>
                         </View>
                     </View>
                 </ImageBackground>

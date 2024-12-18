@@ -1,9 +1,12 @@
+import { Link, router } from "expo-router";
+
 import { View, Image, Text, StyleSheet, ImageBackground, TouchableOpacity } from "react-native";
 
 
-
-
 export default function Profile(){
+    const onPress = () => {
+        router.push("/");
+    }
     return (
         <>
             <View style={styles.perfil} >
@@ -39,8 +42,9 @@ export default function Profile(){
                         </View>
                     </View>
                 </View>
-                <TouchableOpacity><Text style={styles.logout}>Logout</Text></TouchableOpacity>
+                <TouchableOpacity onPress={onPress}><Text style={styles.logout}>Logout</Text></TouchableOpacity>
             </View>
+            
         </>
     )
 }
