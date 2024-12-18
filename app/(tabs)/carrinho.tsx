@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
     FlatList,
     ImageBackground,
@@ -12,6 +12,8 @@ import {
 import { CardCarrinho } from "@/components/carrinho";
 import carrinho from "@/constants/carrinho.json";
 import { Link } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 const requireImg = (img: string) => {
     const imageMap: any = {
@@ -23,6 +25,37 @@ const requireImg = (img: string) => {
 };
 
 export default function HomeScreen() {
+
+    const [cart, setCart] = useState<any[]>([]);
+
+    useEffect(() => {
+        const loadCart = async () => {
+            const storedCart = await AsyncStorage.getItem("cart");
+            if (storedCart) {
+                console.log("Carrinho carregado:", JSON.parse(storedCart)); // Verifique o carrinho carregado
+                setCart(JSON.parse(storedCart));
+            }
+        };
+        loadCart();
+    }, []);
+
+    const handleAddToCart = async (product: any) => {
+        const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+        console.log('Produto adicionado:', product);
+
+        if (existingProductIndex >= 0) {
+            const updatedCart = [...cart];
+            updatedCart[existingProductIndex].qtd += 1;
+            setCart(updatedCart);
+            await AsyncStorage.setItem("cart", JSON.stringify(updatedCart));
+        } else {
+            const updatedCart = [...cart, { ...product, qtd: 1 }];
+            setCart(updatedCart);
+            await AsyncStorage.setItem("cart", JSON.stringify(updatedCart));
+        }
+    };
+
     return (
         <>
             <View style={styles.container}>
@@ -53,8 +86,8 @@ export default function HomeScreen() {
                                     title={item.nome}
                                     image={requireImg(item.imagem)}
                                     preco={item.preco}
-                                    qtd={item.qtd}
-
+                                    qtd={item.qtd} index={0} 
+                                    onUpdatecar={handleAddToCart}
                                 />
                             )}
                         />
