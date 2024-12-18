@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
     View,
     StyleSheet,
@@ -7,112 +7,139 @@ import {
     Image,
     ImageSourcePropType,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const CardCarrinho = ({
     image,
     title,
     preco,
-    qtd
+    qtd,
+    index,
+    onUpdatecar,
 }: {
     image: ImageSourcePropType;
     title: string;
     preco: string;
     qtd: number;
+    index: number;
+    onUpdatecar: (car: any[]) => void;
 }) => {
+
+    const [cart, setCart] = useState<any[]>([]);
+
+    useEffect(() => {
+        const loadCart = async () => {
+            const storedCart = await AsyncStorage.getItem("cart");
+            if (storedCart) {
+                setCart(JSON.parse(storedCart));
+            }
+        };
+        loadCart();
+    }, []);
+
+    const updateCart = async (updatedCart: any[]) => {
+        await AsyncStorage.setItem("cart", JSON.stringify(updatedCart));
+        setCart(updatedCart);
+        onUpdatecar(updatedCart); 
+    };
+
+    const increaseQty = () => {
+        const updatedCart = [...cart];
+        updatedCart[index].qtd += 1;
+        updateCart(updatedCart);
+    };
+
+    const decreaseQty = () => {
+        const updatedCart = [...cart];
+        if (updatedCart[index].qtd > 1) {
+            updatedCart[index].qtd -= 1;
+            updateCart(updatedCart);
+        }
+    };
+
+    const removeItem = () => {
+        const updatedCart = [...cart];
+        updatedCart.splice(index, 1);
+        updateCart(updatedCart);
+    };
+
     return (
-        <>
-            <View style={styles.container}>
-                <View  style={styles.imgDesc}>
-                    <Image source={image} style={styles.image} />
-                    <View style={styles.descProdu}>
-                        <Text style={styles.text}>{title}</Text>
-                        <Text style={styles.preco}>R$ {preco}</Text>
-                    </View>
-                </View>
-                <View style={styles.desc}>
-                    <TouchableOpacity style={styles.car}>
-                        <Image source={require("../assets/images/carrinho.png")} />
-                        <Text style={styles.mais}>+</Text>
-                    </TouchableOpacity>
-                </View>
-                <View>
-                    
+        <View style={styles.container}>
+            <View style={styles.imgDesc}>
+                <Image source={image} style={styles.image} />
+                <View style={styles.descProdu}>
+                    <Text style={styles.text}>{title}</Text>
+                    <Text style={styles.preco}>R$ {preco}</Text>
                 </View>
             </View>
-        </>
+            <View style={styles.qtdAndTrashContainer}>
+                <TouchableOpacity style={styles.trashButton} onPress={removeItem}>
+                    <Image source={require("@/assets/images/trash.png")} style={styles.icon} />
+                </TouchableOpacity>
+                <View style={styles.qtdContainer}>
+                    <TouchableOpacity onPress={increaseQty}>
+                        <Image source={require("@/assets/images/mais.png")} style={styles.icon} />
+                    </TouchableOpacity>
+                    <Text style={styles.qtdText}>{qtd}</Text>
+                    <TouchableOpacity onPress={decreaseQty}>
+                        <Image source={require("@/assets/images/menos.png")} style={styles.icon} />
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </View>
     );
 };
 
+
 const styles = StyleSheet.create({
-    image: {
-        width: "20%",
-        height: "70%",
-    },
-
-    text: {
-        marginBottom: 4,
-    },
-
     container: {
         width: "100%",
         height: 100,
         borderRadius: 15,
         display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexDirection: "row",
-    },
-
-    cate: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-
-    mais: {
-        fontWeight: "700",
-        fontSize: 20,
-        color: "#6C2218"
-
-    },
-
-    preco: {
-        display: "flex",
-        flexDirection: "row",
-        fontWeight: "400",
-        justifyContent: "center",
-        alignItems: "center",
-
-
-    },
-
-    desc: {
-        display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "center",
     },
-
-    car: {
+    imgDesc: {
+        width: "70%",
+        height: "100%",
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
     },
-
     descProdu: {
-
-        display: "flex",
-        justifyContent: "flex-start",
-        marginHorizontal: 16
+        marginLeft: 16,
     },
-
-    imgDesc : {
-
-        width: "100%",
-        height: 100,
-        borderRadius: 15,
+    image: {
+        width: "30%",
+        height: "70%",
+    },
+    text: {
+        marginBottom: 4,
+    },
+    preco: {
+        fontWeight: "400",
+    },
+    qtdAndTrashContainer: {
         display: "flex",
-        alignItems: "center",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        paddingLeft: 16,
+    },
+    qtdContainer: {
         flexDirection: "row",
-    }
+        justifyContent: "center",
+        marginTop: 18,
+    },
+    qtdText: {
+        marginHorizontal: 8,
+    },
+    icon: {
+        width: 17,
+        height: 17,
+    },
+    trashButton: {
+        marginBottom: 8,
+    },
 });
